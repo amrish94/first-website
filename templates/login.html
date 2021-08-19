@@ -1,0 +1,22 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %} Login {%endblock%}
+{% block content %}
+
+<div style="margin: 0 auto; text-align: center; width: 50%;">
+     <h1>Login</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+         <p>{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" novalidate>
+    <input type="email" name="email"><br/><br/>
+    <input type="password" name="password"><br/><br/>
+    <input type="submit" value="Log In">
+</form>
+    </div>
+{%endblock%}

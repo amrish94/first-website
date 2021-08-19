@@ -1,0 +1,35 @@
+{% extends "bootstrap/base.html" %}
+{% include "header.html" %}
+
+{% block title %} Movie Site {% endblock %}
+
+{% block content %}
+<p>Hello {{name}}</p>
+{% for movie in movies %}
+<div class="card" style="margin-top: 80px;" >
+    <div class="front" style="background-image: url({{movie.img_url}});">
+        <p class="large">{{movie.ranking}}</p>
+    </div>
+    <div class="back">
+      <div>
+    <div class="title">Drive <span class="release_date">({{movie.year}})</span></div>
+        <div class="rating">
+            <label>{{movie.rating}}</label>
+          <i class="fas fa-star star"></i>
+        </div>
+         <p class="review">"{{movie.review}}"</p>
+        <p class="overview">{{movie.description}}</p>
+
+        <a href="{{url_for('update', id=movie.id)}}" class="btn btn-success">Update</a>
+        <a href="{{url_for('add_movie', id=movie.id)}}" class="btn btn-danger">Delete</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+<div class="container text-center add">
+<a href="{{url_for('add_movie')}}" class="btn btn-primary">Add Movie</a>
+</div>
+{% endblock %}
+{% include "footer.html" %}

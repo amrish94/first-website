@@ -1,0 +1,11 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% include "header.html" %}
+
+
+<div class="contact" style="background: url(static/images/contact_us1.jpg) no-repeat center;">Update Review and Rating</div>
+<div class="contact-form">
+    {{wtf.quick_form(forms)}}
+</div>
+
+
+{% include "footer.html" %}
