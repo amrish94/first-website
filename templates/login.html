@@ -14,9 +14,12 @@
     {% endwith %}
 
     <form method="POST" novalidate>
-    <input type="email" name="email"><br/><br/>
-    <input type="password" name="password"><br/><br/>
-    <input type="submit" value="Log In">
+        <div class="form-group w-50" style="width: 50%; margin: 5px auto;">
+            <input type="email" class="form-control" name="email" placeholder="email"></div>
+        <div class="form-group w-50" style="width: 50%; margin: 5px auto;">
+    <input type="password" class="form-control" name="password" placeholder="password">
+        </div>
+    <input type="submit" value="Log In" class="btn btn-primary">
 </form>
     </div>
 {%endblock%}
